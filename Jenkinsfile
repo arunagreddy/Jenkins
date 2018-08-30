@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'jdks'
+  }
   stages {
     stage('Say Hello') {
       steps {
@@ -7,5 +9,8 @@ pipeline {
         sh 'java -version'
       }
     }
+  }
+  environment {
+    MY_NAME = 'Aruna'
   }
 }
